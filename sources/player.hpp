@@ -8,6 +8,8 @@
 #include <vector>
 #include "card.hpp"
 
+using namespace std;
+
 namespace ariel{
     class Player {
     private:

@@ -8,7 +8,7 @@
 #include <string>
 
 namespace ariel{
-    enum class Rank {Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace};
+    enum class Rank {Two = 2, Three = 3, Four = 4, Five = 5, Six = 6, Seven = 7, Eight = 8, Nine = 9, Ten = 10, Jack = 11, Queen = 13, King, Ace = 14};
     enum class Suit {Diamonds, Clubs, Hearts, Spades};
 
     class Card {

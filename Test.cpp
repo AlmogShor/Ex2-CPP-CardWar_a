@@ -10,6 +10,8 @@
 #include "sources/game.hpp"
 
 using namespace std;
-using namespace WarGame;
+using namespace ariel;
+
+
 
 
