@@ -20,7 +20,7 @@ namespace ariel{
         Card drawCard();
         void addWonCards(std::vector<Card> cards);
         int stacksize() const;
-        int cardsTaken() const;
+        int cardesTaken() const;
         double getWinRate() const;
         // other stats functions can be added here
 
