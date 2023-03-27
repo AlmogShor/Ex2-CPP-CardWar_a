@@ -35,9 +35,25 @@ TEST_CASE("Test 1") {
 //    }
 
     SUBCASE("init- get winner"){
+        //make sure there is no winner
         CHECK(game.printWiner())
     }
 
+}
+
+TEST_CASE("test 2 - first turn"){
+    Player p_1("Aba")
+    Player p_2("Ima")
+
+    //create a game
+    Game game(p_1, p_2);
+
+    //play a turn
+    game.playTurn();
+
+    //check if the turn was played
+    CHECK(p_1.stacksize() == 25);
+    CHECK(p_2.stacksize() == 25);
 }
 
 
