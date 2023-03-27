@@ -17,8 +17,8 @@ using namespace ariel;
 
 TEST_CASE("Test 1") {
 
-    Player p_1("Aba")
-    Player p_2("Ima")
+    Player p_1("Aba");
+    Player p_2("Ima");
 
     //create a game
     Game game(p_1, p_2);
@@ -36,14 +36,14 @@ TEST_CASE("Test 1") {
 
     SUBCASE("init- get winner"){
         //make sure there is no winner
-        CHECK(game.printWiner())
+        CHECK(game.printWiner());
     }
 
 }
 
 TEST_CASE("test 2 - first turn"){
-    Player p_1("Aba")
-    Player p_2("Ima")
+    Player p_1("Aba");
+    Player p_2("Ima");
 
     //create a game
     Game game(p_1, p_2);
