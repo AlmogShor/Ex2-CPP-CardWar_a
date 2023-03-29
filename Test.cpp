@@ -68,10 +68,10 @@ TEST_CASE("Test 1 - init") {
         //Check throwing exceptions for invalid inputs
         //Check card ctor
         // D for Diamonds,C for Clubs, H for Hearts, S for Spades
-        CHECK_THROWS(Card c(0, "D")); //TRUE
-        CHECK_THROWS(Card c(14, "D")); //TRUE
-        CHECK_NOTHROW(Card c(1, "D")); //TRUE
-        CHECK_THROWS(Card c(1, "B")); //TRUE //Cuz there is no B in Suits
+        CHECK_THROWS(Card(0, "D")); //TRUE
+        CHECK_THROWS(Card(14, "D")); //TRUE
+        CHECK_NOTHROW(Card(1, "D")); //TRUE
+        CHECK_THROWS(Card(1, "B")); //TRUE //Cuz there is no B in Suits
         Card c_1(1, "D"); //TRUE
         Card c_2(c_1); //TRUE
         Card c_3(1, "D"); //TRUE
@@ -81,14 +81,14 @@ TEST_CASE("Test 1 - init") {
         assert(c_1 != c_4); //TRUE
 
         //Check player ctor
-        CHECK_THROWS(Player p("")); //TRUE
-        CHECK_THROWS(Player p(" ")); //TRUE
+        CHECK_THROWS(Player("")); //TRUE
+        CHECK_THROWS(Player(" ")); //TRUE
         Player p("tst1");
 //        CHECK_THROWS(Player p(p)); //TRUE
-        CHECK_THROWS(Player ptst("tst1")); //TRUE
+        CHECK_THROWS(Player("tst1")); //TRUE
 
         //Check game ctor
-        CHECK_THROWS(Game game(p_1, p_1)); //TRUE
+        CHECK_THROWS(Game(p_1, p_1)); //TRUE
 
 
 
