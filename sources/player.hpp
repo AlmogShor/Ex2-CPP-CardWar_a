@@ -19,7 +19,6 @@ namespace ariel {
         int stackSize;
         int cardsTaken;
         bool inGame;
-
     public:
         //empty Ctor
         Player() {

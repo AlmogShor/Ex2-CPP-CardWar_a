@@ -25,10 +25,16 @@ namespace ariel {
         Card();
 
         //Ctor
-        Card(int rank, string suit);
+        Card(int rank, string suit) {
+            this->rank = rank;
+            this->suit = suit;
+        };
 
         //Copy Ctor
-        Card(const Card &other);
+        Card(const Card &other) {
+            this->rank = other.rank;
+            this->suit = other.getSuit();
+        };
 
         //getters
         //getRank returns the rank of the card
