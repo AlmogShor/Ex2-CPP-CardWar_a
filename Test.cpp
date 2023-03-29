@@ -47,7 +47,7 @@ TEST_CASE("Test 1 - init") {
 
         game.printWiner();
         std::cout.rdbuf(p_cout_streambuf); // restore
-        CHECK(oss.str() == "No winner yet\n"); //TRUE Only by my iplementation for now. should be changed
+        CHECK(oss.str() == "Game is not finished yet!"); //TRUE Only by my iplementation for now. should be changed
     }
     SUBCASE("init - stacksize") {
         CHECK(p_1.stacksize() == 26); //TRUE
