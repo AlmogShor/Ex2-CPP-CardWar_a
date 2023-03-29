@@ -89,6 +89,8 @@ TEST_CASE("Test 1 - init") {
 
         //Check game ctor
         CHECK_THROWS(Game(p_1, p_1)); //TRUE
+        CHECK_NOTHROW(Game(p_1, p_2)); //TRUE
+
 
 
 
