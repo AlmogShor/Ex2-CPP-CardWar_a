@@ -18,13 +18,13 @@ using namespace ariel;
 TEST_CASE("Test 0 - card and player ctor") {
 
     SUBCASE("card - ctor") {
-        Card c(1, 1);
+        Card c(1, "S");
         CHECK(c.getRank() == 1);
-        CHECK(c.getSuit() == 1);
+        CHECK(c.getSuit() == "S");
     }
     SUBCASE("player - ctor") {
         Player p("Aba");
-        CHECK(p.getName().isEqual("Aba"));
+        CHECK(p.getName() == "Aba");
         CHECK(p.stacksize() == 0);
         CHECK(p.cardesTaken() == 0);
         CHECK(p.getInGame() == false);
@@ -83,7 +83,7 @@ TEST_CASE("Test 1 - init") {
         //Check player ctor
         CHECK_THROWS(Player p("")); //TRUE
         CHECK_THROWS(Player p(" ")); //TRUE
-        Player p("tst1")
+        Player p("tst1");
 //        CHECK_THROWS(Player p(p)); //TRUE
         CHECK_THROWS(Player ptst("tst1")); //TRUE
 
@@ -97,7 +97,7 @@ TEST_CASE("Test 1 - init") {
 
 
 
-        }
+    }
 }
 
 TEST_CASE("test 2 - first turn") {
@@ -107,13 +107,15 @@ TEST_CASE("test 2 - first turn") {
     //create a game
     CHECK_NOTHROW(Game game(p_1, p_2));
 
+    Game game(p_1, p_2);
+
     //play a turn
     game.playTurn();
 
 
 
     //check if the turn was played
-    CHECK(game.turnNumber == 1);
+    CHECK(game.getTurnNumber() == 1);
     CHECK_NOTHROW(game.printLastTurn());
     CHECK(p_1.stacksize() == 25);
     CHECK(p_2.stacksize() == 25);

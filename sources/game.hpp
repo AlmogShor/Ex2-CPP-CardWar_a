@@ -31,6 +31,8 @@ namespace ariel {
             turnNumber = 0;
         };
 
+        int getTurnNumber() const { return turnNumber; };
+
         //playTurn plays a turn of the game
         void playTurn() {
             cout << "playTurn" << endl << endl;
