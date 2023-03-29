@@ -5,7 +5,7 @@
 #include "doctest.h"
 #include <iostream>
 
-#ןמבךוגק <stdexcept>
+#include <stdexcept>
 
 #include <cassert>
 #include "sources/player.hpp"
@@ -15,7 +15,9 @@
 using namespace std;
 using namespace ariel;
 
-TEST_CASE("Test 1") {
+TEST_CASE("Test 1 - init") {
+
+
 
     Player p_1("Aba");
     Player p_2("Ima");
@@ -29,16 +31,14 @@ TEST_CASE("Test 1") {
         CHECK(p_1.cardesTaken() == 0);
         CHECK(p_2.cardesTaken() == 0);
     }
-//    SUBCASE("init - win rate") {
-//        CHECK(p_1.getWinRate() == 0);
-//        CHECK(p_2.getWinRate() == 0);
-//    }
-
-    SUBCASE("init- get winner"){
-        //make sure there is no winner
-        CHECK(game.printWiner());
+    SUBCASE("init - win rate") {
+        CHECK(p_1.getWinRate() == 0);
+        CHECK(p_2.getWinRate() == 0);
     }
-
+    SUBCASE("init - get winner"){
+        //make sure there is no winner
+        CHECK_NOTHROW(game.printWiner());
+    }
 }
 
 TEST_CASE("test 2 - first turn"){
@@ -52,9 +52,10 @@ TEST_CASE("test 2 - first turn"){
     game.playTurn();
 
     //check if the turn was played
+    CHECK_NOTHROW(game.printLastTurn());
     CHECK(p_1.stacksize() == 25);
     CHECK(p_2.stacksize() == 25);
-}
 
+}
 
 

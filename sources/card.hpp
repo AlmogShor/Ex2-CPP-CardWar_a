@@ -2,27 +2,51 @@
 // Created by shora on 22/03/2023.
 //
 
-#ifndef EX2_CPP_CARDWAR_A_CARD_H
-#define EX2_CPP_CARDWAR_A_CARD_H
+//#ifndef EX2_CPP_CARDWAR_A_CARD_H
+//#define EX2_CPP_CARDWAR_A_CARD_H
+
+#pragma once
 
 #include <string>
 
-namespace ariel{
-    enum class Rank {Two = 2, Three = 3, Four = 4, Five = 5, Six = 6, Seven = 7, Eight = 8, Nine = 9, Ten = 10, Jack = 11, Queen = 13, King, Ace = 14};
-    enum class Suit {Diamonds, Clubs, Hearts, Spades};
+
+namespace ariel {
+//    enum class Rank {Two = 2, Three = 3, Four = 4, Five = 5, Six = 6, Seven = 7, Eight = 8, Nine = 9, Ten = 10, Jack = 11, Queen = 13, King, Ace = 1};
+    //enum class Suit {Diamonds, Clubs, Hearts, Spades};
 
     class Card {
     private:
-        Rank rank;
-        Suit suit;
+        //rank = value of the card
+        int rank;
+        //suit = the suit of the card
+        string suit;
     public:
-        Card(Rank rank, Suit suit);
-        std::string getRank() const;
-        std::string getSuit() const;
-        int getValue() const;
-        bool operator>(const Card& other) const;
-        bool operator==(const Card& other) const;
-    };
-}
+        //Empty Ctor
+        Card();
 
-#endif //EX2_CPP_CARDWAR_A_CARD_H
+        //Ctor
+        Card(int rank, string suit);
+
+        //Copy Ctor
+        Card(const Card &other);
+
+        //getters
+        //getRank returns the rank of the card
+        int getRank() const { return rank; };
+
+        //getSuit returns the suit of the card
+        string getSuit() const { return suit; };
+
+        //overloading operators
+        bool operator<(const Card &other) const { return (rank < other.rank); }
+
+        bool operator>(const Card &other) const { return (rank > other.rank); }
+
+        bool operator==(const Card &other) const { return rank == other.rank; }
+
+        bool operator!=(const Card &other) const { return (rank != other.rank); }
+
+    };
+};
+
+//#endif //EX2_CPP_CARDWAR_A_CARD_H
